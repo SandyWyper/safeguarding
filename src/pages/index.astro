@@ -11,7 +11,7 @@ import safeguardingConfrontation from "../images/safeguarding_confrontation.jpeg
 import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion-at-work.jpeg";
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -38,6 +38,12 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
       .hamburger.is-active .hamburger-inner::before,
       .hamburger.is-active .hamburger-inner::after {
         background-color: #1e40af;
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 2rem; /* This accounts for the fixed header */
       }
     </style>
   </head>
@@ -112,9 +118,12 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
           height={1080}
           quality={80}
         />
-        <div class="absolute inset-0 bg-blue-900 bg-opacity-60"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30 z-20"
+        >
+        </div>
       </div>
-      <div class="relative z-10 text-center px-4">
+      <div class="relative z-30 text-center px-4">
         <h2 class="text-4xl md:text-6xl font-bold mb-4">
           Everyone has a right to be safe.
         </h2>
