@@ -1,5 +1,14 @@
 ---
 import "./src/styles/global.css";
+import { Image } from "astro:assets";
+import safeguardingChild from "../images/safeguarding_child.jpeg";
+import safeguardingExpert from "../images/safeguarding_expert.jpeg";
+import safeguardingAtWork from "../images/safeguarding_at-work.jpeg";
+import safeguardingElderly from "../images/safeguarding_elderly.jpeg";
+import safeguardingClassroom from "../images/safeguarding_classroom.jpeg";
+import safeguardingGroupLesson from "../images/safeguarding_group-lesson.jpeg";
+import safeguardingConfrontation from "../images/safeguarding_confrontation.jpeg";
+import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion-at-work.jpeg";
 ---
 
 <html lang="en">
@@ -9,8 +18,366 @@ import "./src/styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Safeguarding</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom styles for hamburger */
+      .hamburger {
+        padding: 0;
+        margin: 0;
+        z-index: 100;
+      }
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: #1e40af; /* blue-800 */
+      }
+      .hamburger.is-active .hamburger-inner,
+      .hamburger.is-active .hamburger-inner::before,
+      .hamburger.is-active .hamburger-inner::after {
+        background-color: #1e40af;
+      }
+    </style>
   </head>
-  <body>
-    <h1 class="text-emerald-600 text-9xl">Astro</h1>
+  <body class="min-h-screen bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-blue-800">Safeguarding</h1>
+        <button
+          class="hamburger hamburger--collapse lg:!hidden"
+          type="button"
+          aria-label="Menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+        <div id="desktop-menu" class="hidden lg:flex space-x-6">
+          <a href="#what-is" class="text-gray-600 hover:text-blue-800"
+            >What is Safeguarding?</a
+          >
+          <a href="#signs" class="text-gray-600 hover:text-blue-800"
+            >Signs to Watch For</a
+          >
+          <a href="#action" class="text-gray-600 hover:text-blue-800"
+            >Action Steps</a
+          >
+          <a href="#contact" class="text-gray-600 hover:text-blue-800"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div
+      id="mobile-menu"
+      class="fixed top-14 left-0 w-full bg-white shadow-lg transform -translate-y-full transition-transform duration-300 ease-in-out lg:hidden z-40"
+    >
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex flex-col space-y-4">
+          <a href="#what-is" class="text-gray-600 hover:text-blue-800 py-2"
+            >What is Safeguarding?</a
+          >
+          <a href="#signs" class="text-gray-600 hover:text-blue-800 py-2"
+            >Signs to Watch For</a
+          >
+          <a href="#action" class="text-gray-600 hover:text-blue-800 py-2"
+            >Action Steps</a
+          >
+          <a href="#contact" class="text-gray-600 hover:text-blue-800 py-2"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      class="relative h-screen flex items-center justify-center text-white"
+    >
+      <div class="absolute inset-0">
+        <Image
+          src={safeguardingChild}
+          alt="Safeguarding child"
+          class="w-full h-full object-cover z-10 relative"
+          width={1920}
+          height={1080}
+          quality={80}
+        />
+        <div class="absolute inset-0 bg-blue-900 bg-opacity-60"></div>
+      </div>
+      <div class="relative z-10 text-center px-4">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4">
+          Everyone has a right to be safe.
+        </h2>
+        <p class="text-xl md:text-2xl mb-8">
+          Understand how to recognise and respond to safeguarding concerns.
+        </p>
+        <a
+          href="#what-is"
+          class="inline-block bg-white text-blue-800 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors"
+        >
+          Learn More
+        </a>
+      </div>
+    </section>
+
+    <!-- What is Safeguarding Section -->
+    <section id="what-is" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">
+              What is Safeguarding?
+            </h2>
+            <p class="text-gray-600 mb-4">
+              Safeguarding is the protection of children, young people, and
+              vulnerable adults from abuse, neglect, and harm. It's about
+              creating safe environments where everyone can thrive and reach
+              their full potential.
+            </p>
+            <p class="text-gray-600">
+              Our commitment to safeguarding means ensuring that all individuals
+              are protected from any form of abuse, whether physical, emotional,
+              or psychological.
+            </p>
+          </div>
+          <div class="relative h-[400px]">
+            <Image
+              src={safeguardingExpert}
+              alt="Safeguarding expert"
+              class="rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signs to Watch For Section -->
+    <section id="signs" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-blue-800 text-center mb-12">
+          Signs to Watch For
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <Image
+              src={safeguardingConfrontation}
+              alt="Emotional withdrawal"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Emotional Withdrawal</h3>
+            <p class="text-gray-600">
+              Sudden changes in behavior, mood swings, or withdrawal from social
+              activities.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <Image
+              src={safeguardingAtWork}
+              alt="Physical signs"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Physical Signs</h3>
+            <p class="text-gray-600">
+              Unexplained injuries, changes in appearance, or signs of neglect.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <Image
+              src={safeguardingElderly}
+              alt="Behavioral changes"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Behavioral Changes</h3>
+            <p class="text-gray-600">
+              Changes in eating or sleeping patterns, anxiety, or fear of
+              certain situations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action Steps Section -->
+    <section id="action" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-blue-800 text-center mb-12">
+          What You Can Do
+        </h2>
+        <div class="max-w-3xl mx-auto">
+          <p class="text-gray-600 text-center mb-8">
+            Taking action is crucial when you notice signs of abuse or neglect.
+            Here are the steps you can take to help:
+          </p>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"
+              >
+                <span class="text-blue-800 font-bold">1</span>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-xl font-semibold mb-2">Recognize the Signs</h3>
+                <p class="text-gray-600">
+                  Be aware of the warning signs and trust your instincts if
+                  something doesn't feel right.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"
+              >
+                <span class="text-blue-800 font-bold">2</span>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-xl font-semibold mb-2">
+                  Document Your Concerns
+                </h3>
+                <p class="text-gray-600">
+                  Keep a record of any incidents or observations that cause
+                  concern.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"
+              >
+                <span class="text-blue-800 font-bold">3</span>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-xl font-semibold mb-2">
+                  Report to Authorities
+                </h3>
+                <p class="text-gray-600">
+                  Contact the appropriate authorities or safeguarding team
+                  immediately.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-blue-800 text-center mb-12">
+          Need Help or Want to Report a Concern?
+        </h2>
+        <div class="max-w-2xl mx-auto">
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-gray-700 mb-2">Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="message" class="block text-gray-700 mb-2"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                rows="4"
+                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              ></textarea>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="bg-blue-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="mb-4 md:mb-0">
+            &copy; 2024 Safeguarding. All rights reserved.
+          </p>
+          <div class="flex space-x-6">
+            <a href="#" class="hover:text-blue-300">Privacy Policy</a>
+            <a href="#" class="hover:text-blue-300">Accessibility Statement</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu functionality
+      const hamburger = document.querySelector(
+        ".hamburger"
+      ) as HTMLButtonElement | null;
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileMenuLinks = mobileMenu?.querySelectorAll("a") || [];
+      let isMenuOpen = false;
+
+      function toggleMenu() {
+        if (!hamburger || !mobileMenu) return;
+
+        isMenuOpen = !isMenuOpen;
+        hamburger.classList.toggle("is-active");
+        hamburger.setAttribute("aria-expanded", isMenuOpen.toString());
+        mobileMenu.classList.toggle("-translate-y-full");
+      }
+
+      // Toggle menu on hamburger click
+      hamburger?.addEventListener("click", toggleMenu);
+
+      // Close menu when clicking a link
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (isMenuOpen) {
+            toggleMenu();
+          }
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        const target = e.target as Node;
+        if (
+          isMenuOpen &&
+          hamburger &&
+          mobileMenu &&
+          !hamburger.contains(target) &&
+          !mobileMenu.contains(target)
+        ) {
+          toggleMenu();
+        }
+      });
+    </script>
   </body>
 </html>
