@@ -24,3 +24,22 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 3.5rem; /* This accounts for the fixed header */
 }
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
