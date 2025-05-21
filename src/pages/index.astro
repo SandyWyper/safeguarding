@@ -33,7 +33,7 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen bg-gray-50">
+  <body class="min-h-screen bg-gray-50 font-['Manrope'] font-normal">
     <!-- Navigation Bar -->
     <nav class="fixed top-0 w-full bg-white shadow-md z-50">
       <div
@@ -47,7 +47,7 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
           />
         </a>
         <button
-          class="hamburger hamburger--collapse lg:!hidden"
+          class="hamburger hamburger--collapse lg:!hidden p-0 m-0 z-100"
           type="button"
           aria-label="Menu"
           aria-controls="mobile-menu"
@@ -181,6 +181,13 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
               Sudden changes in behavior, mood swings, or withdrawal from social
               activities.
             </p>
+            <button
+              class="read-more-link mt-4 cursor-pointer"
+              data-modal="emotional-withdrawal"
+            >
+              Read More
+              <span class="arrow">→</span>
+            </button>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md">
             <Image
@@ -192,6 +199,13 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
             <p class="text-gray-600">
               Unexplained injuries, changes in appearance, or signs of neglect.
             </p>
+            <button
+              class="read-more-link mt-4 cursor-pointer"
+              data-modal="physical-signs"
+            >
+              Read More
+              <span class="arrow">→</span>
+            </button>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md">
             <Image
@@ -203,6 +217,132 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
             <p class="text-gray-600">
               Changes in eating or sleeping patterns, anxiety, or fear of
               certain situations.
+            </p>
+            <button
+              class="read-more-link mt-4 cursor-pointer"
+              data-modal="behavioral-changes"
+            >
+              Read More
+              <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modals -->
+      <div
+        id="emotional-withdrawal"
+        class="hidden fixed inset-0 w-full h-full bg-black/50 z-1000 opacity-0 transition-opacity duration-300 ease-in-out"
+      >
+        <div
+          class="bg-white m-auto p-8 rounded-lg max-w-[90%] w-[600px] max-h-[90vh] overflow-y-auto relative -translate-y-5 transition-transform duration-300 ease-in-out"
+        >
+          <span
+            class="absolute top-0 right-2 text-2xl text-gray-600 hover:brightness-110 transition-colors cursor-pointer"
+            >&times;</span
+          >
+          <Image
+            src={safeguardingConfrontation}
+            alt="Emotional withdrawal"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-2xl font-semibold mb-4">Emotional Withdrawal</h3>
+          <div class="space-y-4">
+            <p class="text-gray-600">
+              Emotional withdrawal can manifest in various ways and may indicate
+              underlying issues that require attention. Here are some key signs
+              to watch for:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Sudden loss of interest in previously enjoyed activities</li>
+              <li>Withdrawal from social interactions and relationships</li>
+              <li>
+                Changes in communication patterns or reluctance to engage in
+                conversation
+              </li>
+              <li>Unexplained mood swings or emotional outbursts</li>
+              <li>Increased isolation or spending excessive time alone</li>
+            </ul>
+            <p class="text-gray-600">
+              If you notice these signs, it's important to approach the
+              situation with care and sensitivity. Consider reaching out to a
+              professional for guidance on how to best support the individual.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="physical-signs"
+        class="hidden fixed inset-0 w-full h-full bg-black/50 z-1000 opacity-0 transition-opacity duration-300 ease-in-out"
+      >
+        <div
+          class="bg-white m-auto p-8 rounded-lg max-w-[90%] w-[600px] max-h-[90vh] overflow-y-auto relative -translate-y-5 transition-transform duration-300 ease-in-out"
+        >
+          <span
+            class="absolute top-0 right-2 text-2xl text-gray-600 hover:brightness-110 transition-colors cursor-pointer"
+            >&times;</span
+          >
+          <Image
+            src={safeguardingAtWork}
+            alt="Physical signs"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-2xl font-semibold mb-4">Physical Signs</h3>
+          <div class="space-y-4">
+            <p class="text-gray-600">
+              Physical signs of abuse or neglect can be crucial indicators that
+              something is wrong. Here are important signs to be aware of:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Unexplained bruises, cuts, or injuries</li>
+              <li>Poor personal hygiene or unkempt appearance</li>
+              <li>Significant weight loss or gain</li>
+              <li>Frequent illnesses or delayed medical care</li>
+              <li>Inappropriate clothing for weather conditions</li>
+            </ul>
+            <p class="text-gray-600">
+              These signs should be taken seriously and documented. If you
+              observe multiple physical indicators, it's crucial to report your
+              concerns to the appropriate authorities.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="behavioral-changes"
+        class="hidden fixed inset-0 w-full h-full bg-black/50 z-1000 opacity-0 transition-opacity duration-300 ease-in-out"
+      >
+        <div
+          class="bg-white m-auto p-8 rounded-lg max-w-[90%] w-[600px] max-h-[90vh] overflow-y-auto relative -translate-y-5 transition-transform duration-300 ease-in-out"
+        >
+          <span
+            class="absolute top-0 right-2 text-2xl text-gray-600 hover:brightness-110 transition-colors cursor-pointer"
+            >&times;</span
+          >
+          <Image
+            src={safeguardingElderly}
+            alt="Behavioral changes"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-2xl font-semibold mb-4">Behavioral Changes</h3>
+          <div class="space-y-4">
+            <p class="text-gray-600">
+              Behavioral changes can be subtle but significant indicators of
+              potential issues. Here are key behavioral patterns to monitor:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Changes in eating or sleeping patterns</li>
+              <li>Increased anxiety or fearfulness</li>
+              <li>Sudden changes in academic or work performance</li>
+              <li>Unusual aggression or passivity</li>
+              <li>Regression in behavior or development</li>
+            </ul>
+            <p class="text-gray-600">
+              Behavioral changes often occur gradually and may be easy to miss.
+              Regular observation and documentation of these changes can help
+              identify patterns and determine if intervention is needed.
             </p>
           </div>
         </div>
@@ -494,6 +634,69 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
         input?.addEventListener("input", () => {
           hideError(fieldId, `${fieldId}-error`);
         });
+      });
+
+      // Modal functionality
+      const modals = document.querySelectorAll(
+        "[id$='-withdrawal'], [id$='-signs'], [id$='-changes']"
+      );
+      const readMoreButtons = document.querySelectorAll(".read-more-link");
+      const closeButtons = document.querySelectorAll("[class*='text-2xl']");
+
+      function openModal(modalId: string) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          modal.classList.add("opacity-100");
+          document.body.style.overflow = "hidden";
+        }
+      }
+
+      function closeModal(modal: HTMLElement) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        modal.classList.remove("opacity-100");
+        document.body.style.overflow = "";
+      }
+
+      readMoreButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const modalId = button.getAttribute("data-modal");
+          if (modalId) {
+            openModal(modalId);
+          }
+        });
+      });
+
+      closeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const modal = button.closest(
+            "[id$='-withdrawal'], [id$='-signs'], [id$='-changes']"
+          );
+          if (modal) {
+            closeModal(modal as HTMLElement);
+          }
+        });
+      });
+
+      modals.forEach((modal) => {
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            closeModal(modal as HTMLElement);
+          }
+        });
+      });
+
+      // Close modal on escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          modals.forEach((modal) => {
+            if (!modal.classList.contains("hidden")) {
+              closeModal(modal as HTMLElement);
+            }
+          });
+        }
       });
     </script>
   </body>
