@@ -147,3 +147,9 @@
 **Footer**
 
 - Copyright, Privacy Policy, and Accessibility Statement links typically arranged horizontally, often right-aligned or centered at the bottom. The text would be smaller and less prominent.
+
+./mobile-nav-example.mov
+
+<video width="320" height="240" controls>
+  <source src="./mobile-nav-example.mov" type="video/mp4">
+</video>
