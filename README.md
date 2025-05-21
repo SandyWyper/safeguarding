@@ -176,4 +176,5 @@ I used AI to add appropriate aria-labels to the necessary elements. Worked a tre
 #### Lighthouse score (Desktop)
 
 ![image](./screenshots/lighthouse.png)
+
 I think I could get that 99 up to 100 by self hosting the Google fonts and adding font-swap. Also I haven't compressed the images or set sizes attribute for different screen widths.
