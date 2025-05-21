@@ -184,6 +184,9 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
             <button
               class="read-more-link mt-4 cursor-pointer"
               data-modal="emotional-withdrawal"
+              aria-label="Read more about emotional withdrawal"
+              aria-expanded="false"
+              aria-controls="emotional-withdrawal"
             >
               Read More
               <span class="arrow">→</span>
@@ -202,6 +205,9 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
             <button
               class="read-more-link mt-4 cursor-pointer"
               data-modal="physical-signs"
+              aria-label="Read more about physical signs"
+              aria-expanded="false"
+              aria-controls="physical-signs"
             >
               Read More
               <span class="arrow">→</span>
@@ -221,6 +227,9 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
             <button
               class="read-more-link mt-4 cursor-pointer"
               data-modal="behavioral-changes"
+              aria-label="Read more about behavioral changes"
+              aria-expanded="false"
+              aria-controls="behavioral-changes"
             >
               Read More
               <span class="arrow">→</span>
@@ -233,13 +242,18 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
       <div
         id="emotional-withdrawal"
         class="hidden fixed inset-0 w-full h-full bg-black/50 z-1000 opacity-0 transition-opacity duration-300 ease-in-out"
+        role="dialog"
+        aria-modal="true"
       >
         <div
           class="bg-white m-auto p-8 rounded-lg max-w-[90%] w-[600px] max-h-[90vh] overflow-y-auto relative -translate-y-5 transition-transform duration-300 ease-in-out"
         >
           <span
             class="absolute top-0 right-2 text-4xl text-gray-600 hover:brightness-110 transition-colors cursor-pointer"
-            data-modal-close>&times;</span
+            data-modal-close
+            aria-label="Close emotional withdrawal details"
+            role="button"
+            tabindex="0">&times;</span
           >
           <Image
             src={safeguardingConfrontation}
@@ -275,13 +289,18 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
       <div
         id="physical-signs"
         class="hidden fixed inset-0 w-full h-full bg-black/50 z-1000 opacity-0 transition-opacity duration-300 ease-in-out"
+        role="dialog"
+        aria-modal="true"
       >
         <div
           class="bg-white m-auto p-8 rounded-lg max-w-[90%] w-[600px] max-h-[90vh] overflow-y-auto relative -translate-y-5 transition-transform duration-300 ease-in-out"
         >
           <span
             class="absolute top-0 right-0 text-4xl text-gray-600 hover:brightness-110 transition-colors cursor-pointer px-2 z-10"
-            data-modal-close>&times;</span
+            data-modal-close
+            aria-label="Close physical signs details"
+            role="button"
+            tabindex="0">&times;</span
           >
           <Image
             src={safeguardingAtWork}
@@ -313,13 +332,18 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
       <div
         id="behavioral-changes"
         class="hidden fixed inset-0 w-full h-full bg-black/50 z-1000 opacity-0 transition-opacity duration-300 ease-in-out"
+        role="dialog"
+        aria-modal="true"
       >
         <div
           class="bg-white m-auto p-8 rounded-lg max-w-[90%] w-[600px] max-h-[90vh] overflow-y-auto relative -translate-y-5 transition-transform duration-300 ease-in-out"
         >
           <span
             class="absolute top-0 right-2 text-4xl text-gray-600 hover:brightness-110 transition-colors cursor-pointer"
-            data-modal-close>&times;</span
+            data-modal-close
+            aria-label="Close behavioral changes details"
+            role="button"
+            tabindex="0">&times;</span
           >
           <Image
             src={safeguardingElderly}
@@ -645,19 +669,33 @@ import safeguardingGroupDiscussion from "../images/safeguarding_group-discussion
 
       function openModal(modalId: string) {
         const modal = document.getElementById(modalId);
-        if (modal) {
+        const button = document.querySelector(`[data-modal="${modalId}"]`);
+        if (modal && button) {
           modal.classList.remove("hidden");
           modal.classList.add("flex");
           modal.classList.add("opacity-100");
           document.body.style.overflow = "hidden";
+
+          // Update ARIA attributes
+          button.setAttribute("aria-expanded", "true");
+          modal.setAttribute("aria-hidden", "false");
         }
       }
 
       function closeModal(modal: HTMLElement) {
+        const modalId = modal.id;
+        const button = document.querySelector(`[data-modal="${modalId}"]`);
+
         modal.classList.add("hidden");
         modal.classList.remove("flex");
         modal.classList.remove("opacity-100");
         document.body.style.overflow = "";
+
+        // Update ARIA attributes
+        if (button) {
+          button.setAttribute("aria-expanded", "false");
+        }
+        modal.setAttribute("aria-hidden", "true");
       }
 
       readMoreButtons.forEach((button) => {
