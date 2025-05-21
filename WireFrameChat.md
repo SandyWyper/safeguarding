@@ -148,7 +148,7 @@
 
 - Copyright, Privacy Policy, and Accessibility Statement links typically arranged horizontally, often right-aligned or centered at the bottom. The text would be smaller and less prominent.
 
-./mobile-nav-example.mov
+https://github.com/SandyWyper/safeguarding/blob/813bf5c3481b5e979381a082929817e956aae8bb/mobile-nav-example.mov
 
 <video width="320" height="240" controls>
   <source src="./mobile-nav-example.mov" type="video/mp4">
