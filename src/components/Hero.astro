@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import safeguardingChild from "../images/safeguarding_child.jpeg";
+---
+
+<section class="relative h-screen flex items-center justify-center text-white">
+  <div class="absolute inset-0">
+    <Image
+      src={safeguardingChild}
+      alt="Safeguarding child"
+      class="w-full h-full object-cover z-10 relative"
+      width={1920}
+      height={1080}
+      quality={80}
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30 z-20"
+    >
+    </div>
+  </div>
+  <div class="relative z-30 text-center px-4">
+    <h2 class="text-4xl md:text-6xl font-bold mb-4">
+      Everyone has a right to be safe.
+    </h2>
+    <p class="text-xl md:text-2xl mb-8">
+      Understand how to recognise and respond to safeguarding concerns.
+    </p>
+    <a
+      href="#what-is"
+      class="inline-block bg-white text-blue-800 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors"
+    >
+      Learn More
+    </a>
+  </div>
+</section>
+

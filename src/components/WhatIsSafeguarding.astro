@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import safeguardingExpert from "../images/safeguarding_expert.jpeg";
+---
+
+<section id="what-is" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-blue-800 mb-6">
+          What is Safeguarding?
+        </h2>
+        <p class="text-gray-600 mb-4">
+          Safeguarding is the protection of children, young people, and
+          vulnerable adults from abuse, neglect, and harm. It's about creating
+          safe environments where everyone can thrive and reach their full
+          potential.
+        </p>
+        <p class="text-gray-600">
+          Our commitment to safeguarding means ensuring that all individuals are
+          protected from any form of abuse, whether physical, emotional, or
+          psychological.
+        </p>
+      </div>
+      <div class="relative">
+        <Image
+          src={safeguardingExpert}
+          alt="Safeguarding expert"
+          class="rounded-lg shadow-xl"
+        />
+      </div>
+    </div>
+  </div>
+</section>
