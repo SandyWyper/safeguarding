@@ -59,7 +59,7 @@ Site is built using the [Astro.js](https://astro.build/) framework. It is great 
 
 I used [Tailwind](https://tailwindcss.com/) instead of Bootstrap. Tailwind CSS offers greater design flexibility and cleaner code by using utility-first classes, allowing you to build custom UIs without fighting pre-styled components like in Bootstrap. It produces smaller CSS bundles thanks to built-in purging, promotes consistency through design tokens, and fits seamlessly into modern, component-based workflows—making it more scalable and efficient for long-term projects.
 
-##### Hero
+#### Hero
 
 **Description:**  
 A clear, impactful introduction to safeguarding with a call to action.
@@ -76,7 +76,7 @@ A clear, impactful introduction to safeguarding with a call to action.
 <img src="screenshots/desktop-1-hero.png" width="300" alt="Desktop Hero">
 </div>
 
-##### What is Safeguarding and Video Modal
+#### What is Safeguarding and Video Modal
 
 **Description:**  
 Explains safeguarding in simple terms and includes an informative video.
@@ -94,7 +94,7 @@ _\*Screen shots taken before video added_
        <img src="screenshots/desktop-2.png" width="300" alt="Desktop Content">
 </div>
 
-##### Signs to Watch For
+#### Signs to Watch For
 
 **Description:**  
 Outlines common indicators of abuse or neglect across different age groups.
@@ -111,7 +111,7 @@ Outlines common indicators of abuse or neglect across different age groups.
     <img src="screenshots/desktop-4.png" width="300" alt="Desktop Features">
 </div>
 
-##### What You Can Do
+#### What You Can Do
 
 **Description:**  
 Provides actionable steps users can take if they suspect safeguarding concerns.
@@ -126,7 +126,7 @@ Provides actionable steps users can take if they suspect safeguarding concerns.
     <img src="screenshots/desktop-5.png" width="300" alt="Desktop Additional">
 </div>
 
-##### Contact Form
+#### Contact Form
 
 **Description:**  
 Simple form for users to reach out with concerns, questions, or requests.
