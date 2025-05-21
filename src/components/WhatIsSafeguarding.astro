@@ -16,11 +16,21 @@ import safeguardingExpert from "../images/safeguarding_expert.jpeg";
           safe environments where everyone can thrive and reach their full
           potential.
         </p>
-        <p class="text-gray-600">
+        <p class="text-gray-600 mb-6">
           Our commitment to safeguarding means ensuring that all individuals are
           protected from any form of abuse, whether physical, emotional, or
           psychological.
         </p>
+        <button
+          id="videoButton"
+          class="bg-blue-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors cursor-pointer"
+          aria-label="Watch safeguarding video"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="video-modal"
+        >
+          Watch video
+        </button>
       </div>
       <div class="relative">
         <Image
@@ -32,3 +42,83 @@ import safeguardingExpert from "../images/safeguarding_expert.jpeg";
     </div>
   </div>
 </section>
+
+<!-- Video Modal -->
+<div
+  id="video-modal"
+  class="hidden fixed inset-0 w-full h-full bg-black/50 z-1000 opacity-0 transition-opacity duration-300 ease-in-out"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitle"
+>
+  <div
+    class="bg-white m-auto p-8 rounded-lg max-w-[90%] w-[800px] max-h-[90vh] overflow-y-auto relative -translate-y-5 transition-transform duration-300 ease-in-out"
+  >
+    <span
+      class="absolute top-0 right-2 text-4xl text-gray-600 hover:brightness-110 transition-colors cursor-pointer"
+      data-modal-close
+      aria-label="Close video modal"
+      role="button"
+      tabindex="0">&times;</span
+    >
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        id="videoFrame"
+        class="w-full h-[500px]"
+        src=""
+        title="Safeguarding video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  const videoButton = document.getElementById("videoButton");
+  const videoModal = document.getElementById("video-modal") as HTMLDivElement;
+  const closeModal = document.querySelector("[data-modal-close]");
+  const videoFrame = document.getElementById("videoFrame") as HTMLIFrameElement;
+
+  function openModal() {
+    if (!videoModal || !videoFrame) return;
+    videoModal.classList.remove("hidden");
+    videoModal.classList.add("flex");
+    videoModal.classList.add("opacity-100");
+    videoFrame.src = "https://www.youtube.com/embed/Mjo7Kz_4cfk";
+    document.body.style.overflow = "hidden";
+
+    // Update ARIA attributes
+    videoButton?.setAttribute("aria-expanded", "true");
+    videoModal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeVideoModal() {
+    if (!videoModal || !videoFrame) return;
+    videoModal.classList.add("hidden");
+    videoModal.classList.remove("flex");
+    videoModal.classList.remove("opacity-100");
+    videoFrame.src = "";
+    document.body.style.overflow = "";
+
+    // Update ARIA attributes
+    videoButton?.setAttribute("aria-expanded", "false");
+    videoModal.setAttribute("aria-hidden", "true");
+  }
+
+  videoButton?.addEventListener("click", openModal);
+  closeModal?.addEventListener("click", closeVideoModal);
+
+  // Close modal when clicking outside
+  videoModal?.addEventListener("click", (e) => {
+    if (e.target === videoModal) {
+      closeVideoModal();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !videoModal?.classList.contains("hidden")) {
+      closeVideoModal();
+    }
+  });
+</script>
