@@ -162,9 +162,11 @@ _(Examples of work built without AI can be provided if desired)_
 
 I used chat GPT to provide a detailed responsive design and translate to markdown syntax. I then used that as a prompt in co-pilot. It nearly generated the whole site in one shot, but of course there was some tidying up to do, and extra features that I desired.
 
-I need to give more detail on how the mobile menu should work, reads more buttons with modal content and extra details like that. The contact form was completely AI generated. It uses validation, and success feedback. The data is logged in the console.
+I needed to give more detail on how the mobile menu should work, read-more buttons with modal content and extra details like that. The contact form was completely AI generated. It uses validation, and success feedback. The data is logged in the console.
 
 For the video modal with YouTube embed, I used co-pilot. The outcome wasn't consistent with other sections, so I pointed to those sections and instructed the agent to amend the modal and button. The results are great, and it only took me 5 mins at most to complete that feature!
+
+All images generated using AI. I found Gemini to be best for this.
 
 There were many occasions where I would need to intervene, and code things myself, or fix bugs as we went... but on the whole, development was super quick and I think about 5 times the speed. I always review any output from chat or agents, and although it would often miss the mark.. with a couple more prompts the results would be spot on!
 
